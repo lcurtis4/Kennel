@@ -14,7 +14,6 @@ export const LocationList = () => {
 
     }, [])
 
-
 return (
     <div className="locations">
         {console.log("LocationList: Render", locations)}
