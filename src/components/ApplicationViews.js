@@ -13,17 +13,56 @@ import { EmployeeProvider} from "./Employee/EmployeeProvider"
 import { EmployeeList} from "./Employee/EmployeeList"
 import { CustomerProvider} from "./Customer/CustomerProvider"
 import { CustomerList} from "./Customer/CustomerList"
+import { AnimalForm } from "./animal/AnimalForm"
 
 
 export const ApplicationViews = () => {
     return (
         <>
-            {/* Render the location list when http://localhost:3000/ */}
+        <AnimalProvider>
+            <Route exact path="/animals">
+                <AnimalList />
+            </Route>
+        
+        <CustomerProvider>
+            <Route exact path="/customers">
+                <CustomerList />
+            </Route>
+        </CustomerProvider>
+
+        <EmployeeProvider> 
+            <Route exact path="/employees">
+                <EmployeeList />
+            </Route>
+        </EmployeeProvider>
+
+        <LocationProvider>
+            <Route exact path="/locations">
+                <LocationList />
+            </Route>
+        </LocationProvider>
+
+        <Route exact path="/">
+            <Home />
+        </Route>
+        
+            <CustomerProvider>
+                <LocationProvider>
+                    <Route exact path="/animals/create">
+                        <AnimalForm />
+                    </Route>
+                </LocationProvider>
+            </CustomerProvider>
+        </AnimalProvider>
+        </>
+    )
+}
+            {/* Render the location list when http://localhost:3000/ }
             <Route exact path="/">
                 <Home />
             </Route>
 
-            {/* Render the animal list when http://localhost:3000/animals */}
+            { Render the animal list when http://localhost:3000/animals }
                 <AnimalProvider>
             <Route path="/animals">
                 <h2>Animals</h2>
@@ -51,6 +90,5 @@ export const ApplicationViews = () => {
                     <CustomerList />
             </Route>
                 </CustomerProvider>
-        </>
-    )
-}
+*/
+            }
