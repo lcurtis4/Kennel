@@ -17,6 +17,7 @@ export const AnimalList = () => {
 
     }, [])
 
+
 return (
     <>
         <h2>Animals</h2>

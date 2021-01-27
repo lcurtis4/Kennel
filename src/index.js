@@ -25,11 +25,10 @@ import { Kennel } from "./components/Kennel"
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router> 
-      <Kennel />
+    <Router>
+    <Kennel />
     </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
-
 
